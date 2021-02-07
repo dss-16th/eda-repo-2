@@ -20,14 +20,14 @@
     
 
 #### 1-4. Dataset
-    ##### [한국방송광고진흥공사(KOBAKO)](https://adstat.kobaco.co.kr/mcr/portal/dataSet/mdssInfoPage.do?orderState=regDt&pageSize=10&pageIndex=1&searchItem=all&searchText=&datasetId=DS_MST_0000000422#)
+##### [한국방송광고진흥공사(KOBAKO)](https://adstat.kobaco.co.kr/mcr/portal/dataSet/mdssInfoPage.do?orderState=regDt&pageSize=10&pageIndex=1&searchItem=all&searchText=&datasetId=DS_MST_0000000422#)
 * 2019년 소비자행태조사 원시데이터_답변.csv
 
 
 #### 1-5. Roles
 * 담당
-    * 정민주 : 
-    * 이주영 : 
+    * 정민주 : readme 작성, goal1
+    * 이주영 : readme 작성, goal2
 
 
 
