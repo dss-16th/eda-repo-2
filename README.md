@@ -14,20 +14,23 @@
 * 성장하는 PPL시장에서 가장 효율적인 광고효과를 낼 수 있는 PPL 가이드(지표) 제작
 
 
-#### 1-2. Goals
+#### 1-3. Goals
 * A. 성별 연령별 가장 적합한  PPL(상품, 서비스, 공간) 리스트 작성
 * B. 각 PPL(상품, 서비스, 공간)에 가장 적합한 방송시간대 리스트 작성 
     
 
-#### 1-3. Dataset
-##### [한국방송광고진흥공사(KOBAKO)](https://adstat.kobaco.co.kr/mcr/portal/dataSet/mdssInfoPage.do?orderState=regDt&pageSize=10&pageIndex=1&searchItem=all&searchText=&datasetId=DS_MST_0000000422#)
+#### 1-4. Dataset
+    ##### [한국방송광고진흥공사(KOBAKO)](https://adstat.kobaco.co.kr/mcr/portal/dataSet/mdssInfoPage.do?orderState=regDt&pageSize=10&pageIndex=1&searchItem=all&searchText=&datasetId=DS_MST_0000000422#)
 * 2019년 소비자행태조사 원시데이터_답변.csv
 
 
-#### 1-4. Roles
+#### 1-5. Roles
 * 담당
     * 정민주 : 
     * 이주영 : 
+
+
+2. Preview
 ***
 
 ### 결과물
@@ -52,7 +55,7 @@
 * A. '성별 연령별' '실제로 구입한 제품/서비스/장소' 중 TOP3 
 
 * B. '실제구매상품 TOP10'과 '성별 연령별' 구성비율
+
+
+### 3. Conclusion
 ***
-
-### 데이터 출처
-
