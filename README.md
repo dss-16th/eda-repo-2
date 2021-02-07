@@ -17,13 +17,17 @@
 #### 1-2. Goals
 * A. 성별 연령별 가장 적합한  PPL(상품, 서비스, 공간) 리스트 작성
 * B. 각 PPL(상품, 서비스, 공간)에 가장 적합한 방송시간대 리스트 작성 
+    
+
+#### 1-3. Dataset
+##### [한국방송광고진흥공사(KOBAKO)](https://adstat.kobaco.co.kr/mcr/portal/dataSet/mdssInfoPage.do?orderState=regDt&pageSize=10&pageIndex=1&searchItem=all&searchText=&datasetId=DS_MST_0000000422#)
+* 2019년 소비자행태조사 원시데이터_답변.csv
 
 
-#### 1-3. Roles
+#### 1-4. Roles
 * 담당
     * 정민주 : 
     * 이주영 : 
-    
 ***
 
 ### 결과물
@@ -52,4 +56,3 @@
 
 ### 데이터 출처
 
-##### [데이터 링크](https://adstat.kobaco.co.kr/mcr/portal/dataSet/mdssInfoPage.do?orderState=regDt&pageSize=10&pageIndex=1&searchItem=all&searchText=&datasetId=DS_MST_0000000422#)
