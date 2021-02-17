@@ -82,6 +82,56 @@ URL:[기사](https://www.jejudomin.co.kr/news/articleView.html?idxno=127679)
  4. 재난지원금 - 소상공인 구분 
     * 재난지원금 어떤 규모의 소상공인에게 소비 활성화
 
+#### 3-3. Process
+
+##### 1. 모듈설정
+```
+%config InlineBackend.figure_format = 'retina'
+%matplotlib inline
+# 전처리  
+import numpy as np
+import pandas  as pd
+# 위도 경도 바꿔줌 
+from pyproj import CRS
+from pyproj import Proj
+from pyproj import Transformer
+import geopandas
+# 시각화
+import missingno as msno
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+# url 불러옴 
+import requests; from urllib.parse import urlparse
+import json
+import urllib
+
+# 폰트 설정
+from matplotlib import font_manager
+from matplotlib import rc
+plt.rcParams['axes.unicode_minus'] = False
+f_path= "C:/Windows/Fonts/malgun.ttf"
+font_name= font_manager.FontProperties(fname=f_path).get_name()
+rc('font', family =font_name)
+plt.rc('font', family='Malgun Gothic')
+```
+##### 2. 저장된 데이터 불러오기
+```
+raw_data_6 = pd.read_csv('./data/KRI-DAC_Jeju_data6.txt', sep=',')
+raw_data_6.tail(2)
+```
+##### 3. 데이터 다른 변수로 선언 및 결측치 확인
+```
+df_6 = raw_data_6.copy()
+msno.matrix(df_6)
+```
+
+##### 1. 모듈설정
+##### 1. 모듈설정
+##### 1. 모듈설정
+
+
+
 
 ## 4. Conclusion
 
