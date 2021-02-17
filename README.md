@@ -8,11 +8,11 @@
 ##### * 정민주 : 주제설정, PPT 작성, 전처리 및 시각화(7,8월 data)
 ##### * 이주영 : 주재설정, readme 작성, 전처리 및 시각화(5,6월 data), 변수 변환(time_zone, classification)
 #### reference
-Yenabeam (2020.09.01). 제주도 사용금액 데이터를 통한 소비행태 및 재난지원금 효과 분석.
+* Yenabeam (2020.09.01). 제주도 사용금액 데이터를 통한 소비행태 및 재난지원금 효과 분석.
 URL: [GitHubBlog](https://github.com/Yenabeam/JejuEda_DACON)
-진순현 (2020.08.24). 제주관광 ‘붕괴’...‘산업위기대응 특별지역’ 지정 촉구. <제주도민일보>. 
+* 진순현 (2020.08.24). 제주관광 ‘붕괴’...‘산업위기대응 특별지역’ 지정 촉구. <제주도민일보>. 
 URL:[기사](https://www.jejudomin.co.kr/news/articleView.html?idxno=127679)
-김차경 (2020.12.23). 위기에서 도약으로… 코로나19 극복을 위한 우리의 노력[2020, 위기를 넘어 희망을 쓰다] ④ 코로나19 극복 경제지원. <정책뉴스>. URL:[기사](https://www.korea.kr/news/policyNewsView.do?newsId=148881628)
+* 김차경 (2020.12.23). 위기에서 도약으로… 코로나19 극복을 위한 우리의 노력[2020, 위기를 넘어 희망을 쓰다] ④ 코로나19 극복 경제지원. <정책뉴스>. URL:[기사](https://www.korea.kr/news/policyNewsView.do?newsId=148881628)
 
 [출처] 대한민국 정책브리핑(www.korea.kr)
 ****
@@ -84,7 +84,9 @@ URL:[기사](https://www.jejudomin.co.kr/news/articleView.html?idxno=127679)
 
 #### 3-3. Process
 
-##### 1. 모듈설정
+##### 1. 데이터 전처리
+*****
+##### 1-1. 모듈설정
 ```
 %config InlineBackend.figure_format = 'retina'
 %matplotlib inline
@@ -115,23 +117,92 @@ font_name= font_manager.FontProperties(fname=f_path).get_name()
 rc('font', family =font_name)
 plt.rc('font', family='Malgun Gothic')
 ```
-##### 2. 저장된 데이터 불러오기
+##### 1-2. 저장된 데이터 불러오기
 ```
 raw_data_6 = pd.read_csv('./data/KRI-DAC_Jeju_data6.txt', sep=',')
 raw_data_6.tail(2)
 ```
-##### 3. 데이터 다른 변수로 선언 및 결측치 확인
+##### 1-3. 데이터 다른 변수로 선언 및 결측치 확인
 ```
 df_6 = raw_data_6.copy()
 msno.matrix(df_6)
 ```
+![image](https://user-images.githubusercontent.com/75352728/108266471-79b33280-71ad-11eb-916c-1910877b178b.png)
 
-##### 1. 모듈설정
-##### 1. 모듈설정
-##### 1. 모듈설정
+##### 1-4. 시간 -> 시간대로 변경(무승인 거래(별도 승인 없이 결제되는 건(SMS자동결제, 기내 면세점 등))
+
+```
+# int 와 if function하기전 불필요한 '시' 제거
+df_5['Time'] = df_5['Time'].str.replace('시','')
+df_5.head(1)
+# 새벽 2-6 오전 6-11 점심 11-15 오후 15-18  저녁 18-22 심야 22-02 무승인거래 
+# 무승인 거래(별도 승인 없이 결제되는 건(SMS자동결제, 기내 면세점 등))
+
+# 함수 생성
+def time_zone(time):
+    if '02' <= time <'06':
+        return '새벽'
+    elif '06' <= time <'11':
+        return '오전'
+    elif '11' <= time <'15':
+        return '점심'
+    elif '15' <= time <'18':
+        return '오후'
+    elif '18' <= time <'22':
+        return '저녁'
+    else:
+        return '심야'
+
+# 함수를 이용해서 시간대로 변경
+df_5['time_zone'] = df_5['Time'].transform(time_zone)
+df_5['time_zone'] = df_5['Time'].str.replace('x','무승인거래')
+```
+![캡처](https://user-images.githubusercontent.com/75352728/108269537-7ae65e80-71b1-11eb-8287-bb9d6951e81a.PNG)
+
+##### 1-5. 업종 분류
+업종은 약 200여개로 같은 항목끼리 연결하여 새로운 컬럼을 생성
+약 13개의 컬럼으로 묶어준 후 새로운 데이터 프레임으로 생성
+```
+df_5_1 =  df_5[['Type']]
+
+df_5_1.replace(dict.fromkeys({'외국어학원', '보습학원', '유아원', '기능학원', '기타교육', '독서실', '학원(회원제형태)', '초중고교육기관', '대학등록금', '컴퓨터학원', '문구용품', '기타서적문구', '학습지교육', '예체능학원','완구점', '전문서적', '출판인쇄물', '서적출판(회원제형태)', '산후조리원', '과학기자재'}, '교육/학원'), inplace=True)
+df_5_1.replace(dict.fromkeys({'노래방', '문화취미기타', '볼링장', '티켓', '영화관', '상품권','악기점', '일반서적', '화랑', '수족관'}, '문화/오락'), inplace=True)
+df_5_1.replace(dict.fromkeys({'약국', '의원', '종합병원', '의료용품', '기타의료기관및기기', '한의원', '한약방', '치과의원', '치과병원', '병원', '제약회사', '건강진단'}, '의료'), inplace=True)
+df_5_1.replace(dict.fromkeys({'피부미용실', '안마스포츠마사지','미용원' '화장품', '이용원', '미용재료'}, '미용'),inplace=True)
+df_5_1.replace(dict.fromkeys({'인터넷종합Mall', '악세사리', '기타잡화', '면세점', '성인용품점', '가전제품', '스포츠의류', '정장', '가방', '기타가구', '옷감직물', '카메라', '양품점', '시계', '안경', '화방표구점', '소프트웨어', '인터넷Mall', 'DVD음반테이프판매', '기념품점', '민예공예품', '골동품점', '신발', '기타의류', '단체복', '아동의류', '컴퓨터', '기타사무용', '맞춤복점', '귀금속', '캐쥬얼의류', '제화점', 'CATV', '사무기기'}, '쇼핑'), inplace=True)
+df_5_1.replace(dict.fromkeys({'편의점', '대형할인점', '슈퍼마켓', '주류판매점', '제과점', '농축수산품', '농협하나로클럽', '정육점', '구내매점','스넥', '기타음료식품', '기타건강식', '연쇄점', '인삼제품', '홍삼제품'}, '식료품'), inplace=True)
+df_5_1.replace(dict.fromkeys({'콘도', '특급호텔', '2급호텔', '기타숙박업', '1급호텔', '항공사', '관광여행'}, '여행/숙박'),inplace=True)
+df_5_1.replace(dict.fromkeys({'기계공구', '기타건축자재', '건축요업품','유리', '목재석재철물', '인테리어', '조명기구', '냉열기기', '보일러펌프', '페인트', '철제가구', '일반가구', '침구수예점', '기타연료', '기타광학품', '기타업종'}, '건축/기타'), inplace=True)
+df_5_1.replace(dict.fromkeys({'단란주점', '주점','유흥주점','기타회원제형태업소', '칵테일바'}, '유흥/주점'),inplace=True)
+df_5_1.replace(dict.fromkeys({'골프경기장', '헬스크럽', '기타레져업', '당구장', '레져업소(회원제형태)', '수영장', '테니스장', '기타대인서비스', '스포츠레져용품', '골프용품', '레져용품수리', '골프연습장', '종합레져타운'}, '레저/스포츠'), inplace=True)
+df_5_1.replace(dict.fromkeys({'농축협직영매장', '비료농약사료종자', '미곡상', '농기계'}, '농업'), inplace=True)
+df_5_1.replace(dict.fromkeys({'사우나','세탁소', '공공요금', '위탁급식업', '애완동물', '동물병원', '정수기', '기타전기제품', '주방용구', '카페트커텐천막', '기타직물', '내의판매점', '주방용식기'},'생활/인테리어'), inplace=True)
+df_5_1.replace(dict.fromkeys({'주차장', '주유소', '렌트카', '기타자동차서비스', '자동차부품', '견인서비스', '자동차정비', 'LPG', '세차장', '자동차시트타이어', '택시', '중고자동차', '수입자동차', '유류판매', '카인테리어', '기타교통수단', '이륜차판매', '윤활유전문판매'}, '교통/자동차'), inplace=True)
+df_5_1.replace(dict.fromkeys({'화원', '화물운송', '사진관', '보관창고업','사무서비스', '가례서비스', '기타대인서비스', '기타수리서비스', '법률회계서비스', '사무서비스(회원제형태)','조세서비스',  '기타용역서비스', '부동산분양', '기타유통업', '종합용역', '기타운송', '사무통신기기수리', '가정용품수리', '중장비수리', '부동산중개임대', '신변잡화수리', '손해보험', '정기간행물', '건강식품(회원제형태)','기타보험', '손해보험', '기타비영리유통', '통신기기'}, '서비스'), inplace=True)
+df_5_1.replace(dict.fromkeys({'일반한식', '서양음식', '일식회집', '중국음식'}, '외식'), inplace=True)
+```
+
+![캡처](https://user-images.githubusercontent.com/75352728/108270244-8b4b0900-71b2-11eb-8bdf-b338f21d87e7.PNG)
+
+##### 새로운 데이터 프레임 셍성!
+##### 원래 데이터 프레임에 데이터 병합 필요.
 
 
+##### 1-6. 데이터 병합
 
+```
+df_5 = pd.merge(df_5,df_5_1,right_index=True,left_index=True)
+df_5.head(2)
+# 컬럼 명 바꾸기
+df_5 = df_5.rename(columns = {'Type_x':'Type','Type_y':'classification'})
+df_5.head()
+```
+
+##### 1-7 데이터 csv파일로 저장
+
+```
+df_5.to_csv('./data/df_5.csv', sep=',', encoding='euc-kr')
+```
 
 ## 4. Conclusion
 
