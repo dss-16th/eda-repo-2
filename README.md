@@ -82,11 +82,11 @@ URL:[기사](https://www.jejudomin.co.kr/news/articleView.html?idxno=127679)
  4. 재난지원금 - 소상공인 구분 
     * 재난지원금 어떤 규모의 소상공인에게 소비 활성화
 
-#### 3-3. Process
+### 3. Process
 
-##### 1. 데이터 전처리
+#### 1. 데이터 전처리
 *****
-##### 1-1. 모듈설정
+#### 1-1. 모듈설정
 ```
 %config InlineBackend.figure_format = 'retina'
 %matplotlib inline
@@ -117,19 +117,19 @@ font_name= font_manager.FontProperties(fname=f_path).get_name()
 rc('font', family =font_name)
 plt.rc('font', family='Malgun Gothic')
 ```
-##### 1-2. 저장된 데이터 불러오기
+#### 1-2. 저장된 데이터 불러오기
 ```
 raw_data_6 = pd.read_csv('./data/KRI-DAC_Jeju_data6.txt', sep=',')
 raw_data_6.tail(2)
 ```
-##### 1-3. 데이터 다른 변수로 선언 및 결측치 확인
+#### 1-3. 데이터 다른 변수로 선언 및 결측치 확인
 ```
 df_6 = raw_data_6.copy()
 msno.matrix(df_6)
 ```
 ![image](https://user-images.githubusercontent.com/75352728/108266471-79b33280-71ad-11eb-916c-1910877b178b.png)
 
-##### 1-4. 시간 -> 시간대로 변경(무승인 거래(별도 승인 없이 결제되는 건(SMS자동결제, 기내 면세점 등))
+#### 1-4. 시간 -> 시간대로 변경(무승인 거래(별도 승인 없이 결제되는 건(SMS자동결제, 기내 면세점 등))
 
 ```
 # int 와 if function하기전 불필요한 '시' 제거
@@ -159,9 +159,10 @@ df_5['time_zone'] = df_5['Time'].str.replace('x','무승인거래')
 ```
 ![캡처](https://user-images.githubusercontent.com/75352728/108269537-7ae65e80-71b1-11eb-8287-bb9d6951e81a.PNG)
 
-##### 1-5. 업종 분류
-업종은 약 200여개로 같은 항목끼리 연결하여 새로운 컬럼을 생성
-약 13개의 컬럼으로 묶어준 후 새로운 데이터 프레임으로 생성
+#### 1-5. 업종 분류
+
+##### 업종은 약 200여개로 같은 항목끼리 연결하여 새로운 컬럼을 생성
+##### 약 13개의 컬럼으로 묶어준 후 새로운 데이터 프레임으로 생성
 ```
 df_5_1 =  df_5[['Type']]
 
@@ -188,7 +189,7 @@ df_5_1.replace(dict.fromkeys({'일반한식', '서양음식', '일식회집', '�
 ##### 원래 데이터 프레임에 데이터 병합 필요.
 
 
-##### 1-6. 데이터 병합
+#### 1-6. 데이터 병합
 
 ```
 df_5 = pd.merge(df_5,df_5_1,right_index=True,left_index=True)
@@ -198,11 +199,11 @@ df_5 = df_5.rename(columns = {'Type_x':'Type','Type_y':'classification'})
 df_5.head()
 ```
 
-##### 1-7 데이터 csv파일로 저장
+#### 1-7 데이터 csv파일로 저장
 
 ```
 df_5.to_csv('./data/df_5.csv', sep=',', encoding='euc-kr')
 ```
-
+##
 ## 4. Conclusion
 
