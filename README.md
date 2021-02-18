@@ -249,23 +249,51 @@ norm_jeju_type_6
 sns.barplot(x='classification', y='NumofSpent', data=norm_jeju_type_6.nlargest(5, 'NumofSpent'), palette='coolwarm').set_title('6월 상위 5개 업종별 총 이용 건수')
 sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlargest(5, 'NumofDisSpent'), palette='coolwarm').set_title('6월 상위 5개 업종별 재난지원금 이용 건수')
 ```
+##### 월별 상위 5개 업종별 총 이용 건수 비교
 
 ![월별 상위 5개 업종별 총 이용 건수](https://user-images.githubusercontent.com/75352728/108289441-bf81f200-71d1-11eb-8983-4c4a43a6bbb1.PNG)
+
+##### 월별 상위 5개 업종별 재난지원금 이용 건수 비교
+
 ![월별 상위 5개 업종별 재난지원금 이용 건수](https://user-images.githubusercontent.com/75352728/108289447-c446a600-71d1-11eb-8f12-c531e0c62b0a.PNG)
 
 ##### 3. 월별 시군별 재난지원금 사용 금액
 ![월별 시군별 재난지원금 사용금액](https://user-images.githubusercontent.com/75352728/108288422-e63f2900-71cf-11eb-9fde-2d4bbb9a2941.PNG)
 #### 2-3. 소상공인 재난지원금액 비교
 
-![5 6월 소상공인별 재닌지원금 사용 비율 비교](https://user-images.githubusercontent.com/75352728/108288424-e7705600-71cf-11eb-8879-fc3579a4bd4a.PNG)
-
-##### 별다른 차이가 없다고 나온다.
-##### 월별로 소상공인 총 사용 금액을 비교
+##### 월별로 소상공인 총 사용 금액 비교
 
 ![월별 소상공인 총 사용 금액](https://user-images.githubusercontent.com/75352728/108290525-f0fbbd00-71d3-11eb-8146-648551cc777b.PNG)
 
+##### 월별로 소상공인 재난지원금 금액 비교
+
 ![월별 소상공인 재난지원금 금액](https://user-images.githubusercontent.com/75352728/108290528-f1945380-71d3-11eb-834e-e4082b960a65.PNG)
 
-#### 2-4.
+##### 비율을 비교
+
+![5 6월 소상공인별 재닌지원금 사용 비율 비교](https://user-images.githubusercontent.com/75352728/108288424-e7705600-71cf-11eb-8879-fc3579a4bd4a.PNG)
+
+##### 별다른 차이가 없다고 나온다.
+
+#### 2-4. 월별 시간별 사용 금액 
+
+![시간별 총  재난지원금](https://user-images.githubusercontent.com/75352728/108291500-b7c44c80-71d5-11eb-9a49-21f74c348870.PNG)
+##### 왼쪽은 총 사용 금액으로 월별 새로 순으로, 오른쪽은 재난지원금 사용 금액으로 월별 새로 순 으로
+##### 일반 사람의 생활 패턴과 총 사용 금액과 재난지원금 사용 금액이 비슷하게 나타난다.
+##### 23시- 5시까지 제일 사용을 적게 함.
+
+#### 2-5. 월별 시간대별 사용 금액
+
+![월별 시간대별 사용금액](https://user-images.githubusercontent.com/75352728/108292145-da0a9a00-71d6-11eb-95d9-03015c2524c2.PNG)
+
+##### 새벽, 심야 시간 대에 제일 사용을 적게 함.
+##### 즉 23시 -5시에 제일 사용을 적게 함.
+
+##### 시간대별 비율
+
+![캡처](https://user-images.githubusercontent.com/75352728/108292407-61580d80-71d7-11eb-8c3a-e57877699aa9.PNG)
+
+#### 2-6. 
+
 ## 4. Conclusion
 
