@@ -258,8 +258,13 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 #### 2-3. 소상공인 재난지원금액 비교
 
 ![5 6월 소상공인별 재닌지원금 사용 비율 비교](https://user-images.githubusercontent.com/75352728/108288424-e7705600-71cf-11eb-8879-fc3579a4bd4a.PNG)
-# 별다른 차이가 없다고 나온다.
 
+##### 별다른 차이가 없다고 나온다.
+##### 월별로 소상공인 총 사용 금액을 비교
+
+![월별 소상공인 총 사용 금액](https://user-images.githubusercontent.com/75352728/108290525-f0fbbd00-71d3-11eb-8146-648551cc777b.PNG)
+
+![월별 소상공인 재난지원금 금액](https://user-images.githubusercontent.com/75352728/108290528-f1945380-71d3-11eb-834e-e4082b960a65.PNG)
 
 #### 2-4.
 ## 4. Conclusion
