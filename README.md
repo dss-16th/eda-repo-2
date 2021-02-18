@@ -51,14 +51,17 @@ URL:[기사](https://www.jejudomin.co.kr/news/articleView.html?idxno=127679)
 * 정민주 : 주제설정, PPT 작성, 전처리 및 시각화(7,8월 data)
 * 이주영 : 주재설정, readme 작성, 전처리 및 시각화(5,6월 data), 변수 변환(time_zone, classification)
 
-
+****
 
 ## 2. Result : 완성된 리스트
 
+****
 
 ## 3. Proess
 
-#### 3-1. Variables
+### 3-1. Variables Setting
+
+#### 1. Variables
 
 * 데이터 정의
     * YM : 기준년월
@@ -85,7 +88,7 @@ URL:[기사](https://www.jejudomin.co.kr/news/articleView.html?idxno=127679)
  4. 재난지원금 - 소상공인 구분 
     * 재난지원금 어떤 규모의 소상공인에게 소비 활성화
 
-### 3. Process
+### 3-3. Process
 
 #### 1. 데이터 전처리
 *****
@@ -299,4 +302,6 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 #### 2-6. 
 
 ## 4. Conclusion
+
+## 5. 
 
