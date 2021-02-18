@@ -6,7 +6,7 @@
 #### 기간 : 2021.02.02-2021.02.18
 #### * 인원 : 2명
 ##### * 정민주 : 주제설정, readme 작성(구조 등), 전처리 및 시각화(7,8월 data), PPT 작성
-##### * 이주영 : 주설정, readme 작성(코드, 시각화 자료등), 전처리 및 시각화(5,6월 data), 변수 변환(classification)
+##### * 이주영 : 주제설정, readme 작성(코드, 시각화 자료등), 전처리 및 시각화(5,6월 data), 변수 변환(classification)
 #### reference
 * Yenabeam (2020.09.01). 제주도 사용금액 데이터를 통한 소비행태 및 재난지원금 효과 분석.
 URL: [GitHubBlog](https://github.com/Yenabeam/JejuEda_DACON)
