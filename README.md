@@ -199,11 +199,68 @@ df_5 = df_5.rename(columns = {'Type_x':'Type','Type_y':'classification'})
 df_5.head()
 ```
 
-#### 1-7 데이터 csv파일로 저장
+#### 1-7. 데이터 csv파일로 저장
 
 ```
 df_5.to_csv('./data/df_5.csv', sep=',', encoding='euc-kr')
 ```
-##
+#### 2. 시각화
+****
+#### 2-1. 재난지원금 사용 비율 비교
+
+
+```
+df_5 = raw_data_5
+sigu_5 = df_5.groupby('SIGUNGU').sum()
+```
+
+![5](https://user-images.githubusercontent.com/75352728/108288368-d32c5900-71cf-11eb-9596-666790f7c55b.PNG)
+
+##### 결과값을 대입해 주면 됨
+
+
+```
+# 5월
+ratio = [168687712199,24180094624]
+labels = ['TotalSpent','DisSpent']
+# 8월
+ratio = [51576733826,150977596]
+labels = ['TotalSpent','DisSpent']
+
+```
+![5 8월 재난지원금 비율](https://user-images.githubusercontent.com/75352728/108288246-9d877000-71cf-11eb-8bec-7cfc33bcf793.PNG)
+
+#### 2-2. 월별 총 사용금액 비교
+
+##### 1. 월별 시군별 총 사용금액
+
+![월별 시군별 총 사용금액](https://user-images.githubusercontent.com/75352728/108288419-e5a69280-71cf-11eb-91bb-111edb6c8c93.PNG)
+##### 2. 월별 상위 5개 업종별 총 이용 건수
+
+```
+jeju_type_6 = df_6.groupby(['classification'], as_index=False).mean()
+norm_jeju_type_6 = jeju_type_6.copy()
+col = ['NumofSpent', 'NumofDisSpent']
+col
+num_jeju_type_6 = (jeju_type_6[col]) / (jeju_type_6[col].max())
+norm_jeju_type_6 = jeju_type_6.copy()
+norm_jeju_type_6
+
+sns.barplot(x='classification', y='NumofSpent', data=norm_jeju_type_6.nlargest(5, 'NumofSpent'), palette='coolwarm').set_title('6월 상위 5개 업종별 총 이용 건수')
+sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlargest(5, 'NumofDisSpent'), palette='coolwarm').set_title('6월 상위 5개 업종별 재난지원금 이용 건수')
+```
+
+![월별 상위 5개 업종별 총 이용 건수](https://user-images.githubusercontent.com/75352728/108289441-bf81f200-71d1-11eb-8983-4c4a43a6bbb1.PNG)
+![월별 상위 5개 업종별 재난지원금 이용 건수](https://user-images.githubusercontent.com/75352728/108289447-c446a600-71d1-11eb-8f12-c531e0c62b0a.PNG)
+
+##### 3. 월별 시군별 재난지원금 사용 금액
+![월별 시군별 재난지원금 사용금액](https://user-images.githubusercontent.com/75352728/108288422-e63f2900-71cf-11eb-9fde-2d4bbb9a2941.PNG)
+#### 2-3. 소상공인 재난지원금액 비교
+
+![5 6월 소상공인별 재닌지원금 사용 비율 비교](https://user-images.githubusercontent.com/75352728/108288424-e7705600-71cf-11eb-8879-fc3579a4bd4a.PNG)
+# 별다른 차이가 없다고 나온다.
+
+
+#### 2-4.
 ## 4. Conclusion
 
