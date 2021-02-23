@@ -129,11 +129,14 @@ raw_data_6 = pd.read_csv('./data/KRI-DAC_Jeju_data6.txt', sep=',')
 raw_data_6.tail(2)
 ```
 #### 1-3. 데이터 다른 변수로 선언 및 결측치 확인
+
 ```
 df_6 = raw_data_6.copy()
 msno.matrix(df_6)
 ```
 ![image](https://user-images.githubusercontent.com/75352728/108266471-79b33280-71ad-11eb-916c-1910877b178b.png)
+
+##### 결측치 없음
 
 #### 1-4. 시간 -> 시간대로 변경(무승인 거래(별도 승인 없이 결제되는 건(SMS자동결제, 기내 면세점 등))
 
@@ -299,9 +302,30 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 
 ![캡처](https://user-images.githubusercontent.com/75352728/108292407-61580d80-71d7-11eb-8c3a-e57877699aa9.PNG)
 
-#### 2-6. 
+*****
+#### 2-6. 상위 5개 업종 사용 금액 비교
+
+##### 1. 상위 5개 업종 총 사용 금액
+![상위 5개 업종](https://user-images.githubusercontent.com/75352728/108819425-2fdba980-75fe-11eb-95dc-18f6a66d7a05.PNG)
+![외식](https://user-images.githubusercontent.com/75352728/108819430-310cd680-75fe-11eb-9bde-29e11c6d2d37.PNG)
+![쇼핑](https://user-images.githubusercontent.com/75352728/108819434-323e0380-75fe-11eb-9a07-b62a8f3b0acd.PNG)
+![교통자동차](https://user-images.githubusercontent.com/75352728/108819437-32d69a00-75fe-11eb-89e5-b51a5a1c0d88.PNG)
+![의료](https://user-images.githubusercontent.com/75352728/108819441-3407c700-75fe-11eb-899f-7ee00877762b.PNG)
+![여행숙박](https://user-images.githubusercontent.com/75352728/108819445-3538f400-75fe-11eb-894c-d0475a3e60cd.PNG)
+
+##### 2. 상위 5개 업종 재난지원금 사용 금액
+![재 사](https://user-images.githubusercontent.com/75352728/108820102-0a02d480-75ff-11eb-9e76-ebfd594a1493.PNG)
+![재 식](https://user-images.githubusercontent.com/75352728/108820108-0b340180-75ff-11eb-90b6-2f0fb726151b.PNG)
+![재 외](https://user-images.githubusercontent.com/75352728/108820856-20f5f680-7600-11eb-9f83-de341277cf05.PNG)
+![재 자](https://user-images.githubusercontent.com/75352728/108820122-125b0f80-75ff-11eb-92d4-dc0168770098.PNG)
+![재 농](https://user-images.githubusercontent.com/75352728/108820127-138c3c80-75ff-11eb-943f-3053c6ceb6bc.PNG)
+![재 의](https://user-images.githubusercontent.com/75352728/108820130-1424d300-75ff-11eb-81cc-0820a424cb5d.PNG)
 
 ## 4. Conclusion
 
-## 5. 
+## 5. comment & limitations
 
+### -  
+### - 
+### -
+### -
