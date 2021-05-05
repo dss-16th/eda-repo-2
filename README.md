@@ -276,7 +276,7 @@ df_5_1.replace(dict.fromkeys({'일반한식', '서양음식', '일식회집', '�
 
 
 
- <img src="https://user-images.githubusercontent.com/75352728/108270244-8b4b0900-71b2-11eb-8bdf-b338f21d87e7.PNG" width="50%" height="50%">
+ <img src="https://user-images.githubusercontent.com/75352728/108270244-8b4b0900-71b2-11eb-8bdf-b338f21d87e7.PNG" width="20%" height="10%">
  
 <br />
 
