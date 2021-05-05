@@ -13,7 +13,8 @@
 ##### GitHub address : [https://github.com/leekj3133](https://github.com/leekj3133)
 
 
-
+<br />
+<br />
 ****
 #### reference
 * Yenabeam (2020.09.01). 제주도 사용금액 데이터를 통한 소비행태 및 재난지원금 효과 분석.
@@ -26,7 +27,8 @@ URL:[기사](https://www.jejudomin.co.kr/news/articleView.html?idxno=127679)
 ****
 
 
-
+<br />
+<br />
 ## 1. Intro
 
 
@@ -39,16 +41,19 @@ URL:[기사](https://www.jejudomin.co.kr/news/articleView.html?idxno=127679)
 
 
 
-
+<br />
+<br />
 #### 1-2. purpose
 * 제주도의 공간 정보를 활용해 재난지원금이 제주도의 소상공인과 서민들의 가계 경제에 어떤 영향을 끼치는지 확인하고자 한다.
 
-
+<br />
+<br />
 #### 1-3. Goals
 * 제주도의 전반적 소비와 재난지원금 사용의 비교분석
 
     
-
+<br />
+<br />
 #### 1-4. Dataset
 ##### [공간정보 탐색적 데이터 분석 경진대회](https://dacon.io/competitions/official/235682/data/)
 * data.zip(27.8MB)
@@ -58,7 +63,8 @@ URL:[기사](https://www.jejudomin.co.kr/news/articleView.html?idxno=127679)
     * KRI-DAC_Jeju_data8.txt(37.4MB)
 
 
-
+<br />
+<br />
 
 #### 1-5. Roles
 * 정민주 : 주제설정, PPT 작성, 전처리 및 시각화(7,8월 data)
@@ -67,23 +73,24 @@ URL:[기사](https://www.jejudomin.co.kr/news/articleView.html?idxno=127679)
 
 ****
 
-
+<br />
 ## 2. Result : 완성된 리스트
 
-
+<br />
 ****
-
+<br />
+<br />
 ## 3. Proess
 
-
+<br />
 
 ### 3-1. Variables Setting
 
 
-
+<br />
 #### 1. Variables
 
-
+<br />
 
 * 데이터 정의
     * YM : 기준년월
@@ -98,7 +105,7 @@ URL:[기사](https://www.jejudomin.co.kr/news/articleView.html?idxno=127679)
     * NumOfDisSpent : 총 재난지원금 이용건수
     * POINT_X, POINT_Y : X,Y 좌표
    
-
+<br />
 #### 3-2. Details
  1. 제주도 소비 전반적 시각화
     * 기간별/업종별 시각화
@@ -111,20 +118,20 @@ URL:[기사](https://www.jejudomin.co.kr/news/articleView.html?idxno=127679)
     * 재난지원금 어떤 규모의 소상공인에게 소비 활성화
 
 
-
+<br />
 ### 3-3. Process
 
-
+<br />
 
 #### 1. 데이터 전처리
 
-
+<br />
 *****
 
-
+<br />
 #### 1-1. 모듈설정
 
-
+<br />
 ```
 %config InlineBackend.figure_format = 'retina'
 %matplotlib inline
@@ -156,19 +163,19 @@ rc('font', family =font_name)
 plt.rc('font', family='Malgun Gothic')
 ```
 
-
+<br />
 #### 1-2. 저장된 데이터 불러오기
 
-
+<br />
 ```
 raw_data_6 = pd.read_csv('./data/KRI-DAC_Jeju_data6.txt', sep=',')
 raw_data_6.tail(2)
 ```
-
+<br />
 
 #### 1-3. 데이터 다른 변수로 선언 및 결측치 확인
 
-
+<br />
 ```
 df_6 = raw_data_6.copy()
 msno.matrix(df_6)
@@ -179,11 +186,11 @@ msno.matrix(df_6)
 ##### 결측치 없음
 
 
-
+<br />
 #### 1-4. 시간 -> 시간대로 변경(무승인 거래(별도 승인 없이 결제되는 건(SMS자동결제, 기내 면세점 등))
 
 
-
+<br />
 ```
 # int 와 if function하기전 불필요한 '시' 제거
 df_5['Time'] = df_5['Time'].str.replace('시','')
@@ -213,13 +220,13 @@ df_5['time_zone'] = df_5['Time'].str.replace('x','무승인거래')
 ![캡처](https://user-images.githubusercontent.com/75352728/108269537-7ae65e80-71b1-11eb-8287-bb9d6951e81a.PNG)
 
 
-
+<br />
 #### 1-5. 업종 분류
 
-
+<br />
 ##### * 업종은 약 200여개로 같은 항목끼리 연결하여 새로운 컬럼을 생성
 ##### * 약 13개의 컬럼으로 묶어준 후 새로운 데이터 프레임으로 생성
-
+<br />
 ```
 df_5_1 =  df_5[['Type']]
 
@@ -239,16 +246,16 @@ df_5_1.replace(dict.fromkeys({'주차장', '주유소', '렌트카', '기타자�
 df_5_1.replace(dict.fromkeys({'화원', '화물운송', '사진관', '보관창고업','사무서비스', '가례서비스', '기타대인서비스', '기타수리서비스', '법률회계서비스', '사무서비스(회원제형태)','조세서비스',  '기타용역서비스', '부동산분양', '기타유통업', '종합용역', '기타운송', '사무통신기기수리', '가정용품수리', '중장비수리', '부동산중개임대', '신변잡화수리', '손해보험', '정기간행물', '건강식품(회원제형태)','기타보험', '손해보험', '기타비영리유통', '통신기기'}, '서비스'), inplace=True)
 df_5_1.replace(dict.fromkeys({'일반한식', '서양음식', '일식회집', '중국음식'}, '외식'), inplace=True)
 ```
-
+<br />
 ![캡처](https://user-images.githubusercontent.com/75352728/108270244-8b4b0900-71b2-11eb-8bdf-b338f21d87e7.PNG)
-
+<br />
 ##### 새로운 데이터 프레임 셍성!
 ##### 원래 데이터 프레임에 데이터 병합 필요.
 
 
-
+<br />
 #### 1-6. 데이터 병합
-
+<br />
 
 ```
 df_5 = pd.merge(df_5,df_5_1,right_index=True,left_index=True)
@@ -257,35 +264,36 @@ df_5.head(2)
 df_5 = df_5.rename(columns = {'Type_x':'Type','Type_y':'classification'})
 df_5.head()
 ```
-
+<br />
 #### 1-7. 데이터 csv파일로 저장
 
-
+<br />
 ```
 df_5.to_csv('./data/df_5.csv', sep=',', encoding='euc-kr')
 ```
-
-
+<br />
+<br />
+<br />
 #### 2. 시각화
-
+<br />
 
 ****
 
 
-
+<br />
 #### 2-1. 재난지원금 사용 비율 비교
-
+<br />
 
 ```
 df_5 = raw_data_5
 sigu_5 = df_5.groupby('SIGUNGU').sum()
 ```
-
+<br />
 ![5](https://user-images.githubusercontent.com/75352728/108288368-d32c5900-71cf-11eb-9596-666790f7c55b.PNG)
-
+<br />
 ##### 결과값을 대입해 주면 됨
 
-
+<br />
 ```
 # 5월
 ratio = [168687712199,24180094624]
@@ -295,41 +303,42 @@ ratio = [51576733826,150977596]
 labels = ['TotalSpent','DisSpent']
 
 ```
+<br />
 ![5 8월 재난지원금 비율](https://user-images.githubusercontent.com/75352728/108288246-9d877000-71cf-11eb-8bec-7cfc33bcf793.PNG)
-
+<br />
 ##### 5월과 8월을 비교했을 때 5월에 비해 8월이 사용량이 적은 걸 볼 수 있음
 ##### 재난지원금을 받아 바로 사용한 사람이 많아 8월에는 사용량이 적은걸로 보여짐.
-
+<br />
 *****
 
-
+<br />
 #### 2-2. 월별 총 사용금액 비교
 
-
+<br />
 
 *****
 
-
+<br />
 ##### 1. 월별 시군별 총 사용금액
-
+<br />
 ![월별 시군별 총 사용금액](https://user-images.githubusercontent.com/75352728/108288419-e5a69280-71cf-11eb-91bb-111edb6c8c93.PNG)
-
+<br />
 ##### 제주시 서귀포시에 총 사용금액은 월과 상관 없게 일정하게 나타남.
-
+<br />
 *****
-
+<br />
 
 ##### 2. 월별 시군별 재난지원금 사용 금액
-
+<br />
 ![월별 시군별 재난지원금 사용금액](https://user-images.githubusercontent.com/75352728/108288422-e63f2900-71cf-11eb-9fde-2d4bbb9a2941.PNG)
-
+<br />
 ##### 제주시 서귀포시에 재난지원금 사용금액 역시 월과 상관 없게 일정하게 나타남.
-
+<br />
 *****
 
-
+<br />
 ##### 3. 월별 상위 5개 업종별 총 이용 건수
-
+<br />
 
 ```
 jeju_type_6 = df_6.groupby(['classification'], as_index=False).mean()
@@ -343,54 +352,54 @@ norm_jeju_type_6
 sns.barplot(x='classification', y='NumofSpent', data=norm_jeju_type_6.nlargest(5, 'NumofSpent'), palette='coolwarm').set_title('6월 상위 5개 업종별 총 이용 건수')
 sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlargest(5, 'NumofDisSpent'), palette='coolwarm').set_title('6월 상위 5개 업종별 재난지원금 이용 건수')
 ```
-
+<br />
 ##### 월별 상위 5개 업종별 총 이용 건수 비교
-
+<br />
 ![월별 상위 5개 업종별 총 이용 건수](https://user-images.githubusercontent.com/75352728/108289441-bf81f200-71d1-11eb-8983-4c4a43a6bbb1.PNG)
-
+<br />
 ##### * 총 이용 건수에는 공통적으로 농업, 식료품, 의료, 교통/자동차, 쇼핑 등에 사용함.
 
 ##### 월별 상위 5개 업종별 재난지원금 이용 건수 비교
-
+<br />
 ![월별 상위 5개 업종별 재난지원금 이용 건수](https://user-images.githubusercontent.com/75352728/108289447-c446a600-71d1-11eb-8f12-c531e0c62b0a.PNG)
-
+<br />
 ##### * 재난지원금 이용 건수에는 공통적으로 농업, 의료, 식료품, 기타농업관련, 교통/자동차 등에 사용함.
 
 
 ##### * 제주도민의 재난지원금 사용은 도민들이 총 사용 하는 것과 거의 일치함.
 ##### * 정부의 정책인 도민들의 경제 생활 안정을 위해 사용되는 것으로 보임.
-
+<br />
 *****
-
+<br />
 
 #### 2-3. 소상공인 재난지원금액 비교
 
-
+<br />
 
 ##### 월별로 소상공인 총 사용 금액 비교
-
+<br />
 ![월별 소상공인 총 사용 금액](https://user-images.githubusercontent.com/75352728/108290525-f0fbbd00-71d3-11eb-8146-648551cc777b.PNG)
- 
+ <br />
 ##### * 5,6 월 : 일반 > 중소2 > 중소1 > 중소 > 영세 순으로 볼 수 있음
 ##### * 7,8 월 : 일반 > 영세 > 중소2 > 중소1 > 중소 순으로 볼 수 있음
 
 ##### 월별로 소상공인 재난지원금 금액 비교
-
+<br />
 ![월별 소상공인 재난지원금 금액](https://user-images.githubusercontent.com/75352728/108290528-f1945380-71d3-11eb-834e-e4082b960a65.PNG)
-
+<br />
 ##### * 5,6 7,8 월 : 일반 > 영세 > 중소1 > 중소 , 중소2  순으로 볼 수 있음
 
 ##### * 재난지원금은 월별로 소상공인의 사용 금액 차이가 거의 없음.
 
-
+<br />
 ##### 비율을 비교
-
+<br />
 ![5 6월 소상공인별 재닌지원금 사용 비율 비교](https://user-images.githubusercontent.com/75352728/108288424-e7705600-71cf-11eb-8879-fc3579a4bd4a.PNG)
-
+<br />
 ##### 비율을 표로 보았을 때 각 소상공인의 사용 금액은 별다른 차이가 없음.
-
+<br />
 *****
-
+<br />
 
 #### 2-4. 월별 시간별 사용 금액 
 
@@ -398,106 +407,113 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 ##### 왼쪽은 총 사용 금액으로 월별 새로 순으로, 오른쪽은 재난지원금 사용 금액으로 월별 새로 순 으로
 ##### 일반 사람의 생활 패턴과 총 사용 금액과 재난지원금 사용 금액이 비슷하게 나타난다.
 ##### 23시- 5시까지 제일 사용을 적게 함.
-
+<br />
 *****
 
-
+<br />
 #### 2-5. 월별 시간대별 사용 금액
-
+<br />
 ![월별 시간대별 사용금액](https://user-images.githubusercontent.com/75352728/108292145-da0a9a00-71d6-11eb-95d9-03015c2524c2.PNG)
-
+<br />
 ##### 새벽, 심야 시간 대에 제일 사용을 적게 함.
 ##### 즉 23시 -5시에 제일 사용을 적게 함.
 
 ##### 시간대별 비율
 
-
+<br />
 ![캡처](https://user-images.githubusercontent.com/75352728/108292407-61580d80-71d7-11eb-8c3a-e57877699aa9.PNG)
-
+<br />
 ##### * 시간대별 비율은 5,6,7,8 월 모두 심야, 새벽이 적은 비율로 나타남.
-
+<br />
 *****
 
-
+<br />
 #### 2-6. 상위 5개 업종 사용 금액 비교
-
+<br />
 
 ##### 1. 상위 5개 업종 총 사용 금액
 ![상위 5개 업종](https://user-images.githubusercontent.com/75352728/108819425-2fdba980-75fe-11eb-95dc-18f6a66d7a05.PNG)
-
+<br />
 ##### * 월별 상위 5개 업종을 보았을 때 5,6,7,8월 모두 식료품, 외식, 쇼핑, 교통/자동차가 동일하게 보임
 ##### * 8월에 여행, 숙박 비용이 늘어난 것으로 보임.
 
-
+<br />
 
 ##### 1-1. 월별 외식 총 사용 금액 비교
-
+<br />
 ![외식](https://user-images.githubusercontent.com/75352728/108819430-310cd680-75fe-11eb-9bde-29e11c6d2d37.PNG)
-
+<br />
 
 
 ##### 1-2. 월별 쇼핑 총 사용 금액 비교
+<br />
 ![쇼핑](https://user-images.githubusercontent.com/75352728/108819434-323e0380-75fe-11eb-9a07-b62a8f3b0acd.PNG)
-
+<br />
 
 
 ##### 1-3. 월별 교통/자동차 총 사용 금액 비교
+<br />
 ![교통자동차](https://user-images.githubusercontent.com/75352728/108819437-32d69a00-75fe-11eb-89e5-b51a5a1c0d88.PNG)
+<br />
 
 
-
-##### 1-4. 월별 의료 총 사용 금액 비교
+##### 1-4. 월별 의료 총 사용 금액 비교<br />
 ![의료](https://user-images.githubusercontent.com/75352728/108819441-3407c700-75fe-11eb-899f-7ee00877762b.PNG)
 
-
+<br />
 
 ##### 1-5. 월별 여행/숙박 총 사용 금액 비교
-
+<br />
 
 ![여행숙박](https://user-images.githubusercontent.com/75352728/108819445-3538f400-75fe-11eb-894c-d0475a3e60cd.PNG)
-
+<br />
 ##### * 여행/숙박을 제외한 5가지 업종이 시간별 비슷한 패턴을 보이고 있음.
 
 
-
+<br />
 ##### 2. 상위 5개 업종 재난지원금 사용 금액
-
+<br />
 
 ![재 사](https://user-images.githubusercontent.com/75352728/108820102-0a02d480-75ff-11eb-9e76-ebfd594a1493.PNG)
-
+<br />
 ##### * 월별 상위 5개 업종을 보았을 때 5,6,7,8월 모두 순위는 조금 다르지만 식료품, 외식, 쇼핑, 교통/자동차, 농업이 동일하게 보임
 
 
-
+<br />
 ##### 2-1. 월별 외식 총 사용 금액 비교
+<br />
 ![재 식](https://user-images.githubusercontent.com/75352728/108820108-0b340180-75ff-11eb-90b6-2f0fb726151b.PNG)
 
 
-
+<br />
 ##### 2-2. 월별 쇼핑 총 사용 금액 비교
+<br />
 ![재 외](https://user-images.githubusercontent.com/75352728/108820856-20f5f680-7600-11eb-9f83-de341277cf05.PNG)
 
 
-
+<br />
 ##### 2-3. 월별 교통/자동차 총 사용 금액 비교
+<br />
 ![재 자](https://user-images.githubusercontent.com/75352728/108820122-125b0f80-75ff-11eb-92d4-dc0168770098.PNG)
 
-
+<br />
 
 ##### 2-4. 월별 의료 총 사용 금액 비교
+<br />
 ![재 농](https://user-images.githubusercontent.com/75352728/108820127-138c3c80-75ff-11eb-943f-3053c6ceb6bc.PNG)
-
+<br />
 
 
 ##### 2-5. 월별 여행/숙박 총 사용 금액 비교
+<br />
 ![재 의](https://user-images.githubusercontent.com/75352728/108820130-1424d300-75ff-11eb-81cc-0820a424cb5d.PNG)
 
-
+<br />
 ##### * 총 사용 금액에서 많이 사용 되는 업종이 재난지원금에서 또한 많이 사용되는 것으로 나타남.
 ##### * 제주도민은 생활패턴과 일치하게 재난지원금을 사용하고 있음.
 
 
-
+<br /><br />
 ## 4. Conclusion
 
 #### - 재난 지원금은 5월에 가장 많이 사용함.
@@ -507,7 +523,7 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 #### - 기사에서 보았던 재난지원금의 남용은 극히 드문 사람들에 한에서만 발생하는 것으로 생각할 수 있음.
 #### -  재난지원금의 취지와 알맞게 재난지원금은 도민의 가계에 도움이 됨.
 
-
+<br /><br />
 
 ## 5. comment & limitations
 
