@@ -240,7 +240,7 @@ df_5['time_zone'] = df_5['Time'].transform(time_zone)
 df_5['time_zone'] = df_5['Time'].str.replace('x','무승인거래')
 ```
 
- <img src="https://user-images.githubusercontent.com/75352728/108269537-7ae65e80-71b1-11eb-8287-bb9d6951e81a.PNG">
+ <img src="https://user-images.githubusercontent.com/75352728/108269537-7ae65e80-71b1-11eb-8287-bb9d6951e81a.PNG" width="15%" height="8%">
 
 <br />
 
