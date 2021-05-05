@@ -239,7 +239,7 @@ def time_zone(time):
 df_5['time_zone'] = df_5['Time'].transform(time_zone)
 df_5['time_zone'] = df_5['Time'].str.replace('x','무승인거래')
 ```
- <img src="https://user-images.githubusercontent.com/75352728/117134919-38f8ac00-ade1-11eb-8212-01f5c3d05efe.png" width="70%" height="70%">
+ <img src="https://user-images.githubusercontent.com/75352728/117134919-38f8ac00-ade1-11eb-8212-01f5c3d05efe.png" width="20%" height="10%">
  
 <br />
 
