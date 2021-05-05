@@ -85,7 +85,7 @@ URL:[기사](https://www.jejudomin.co.kr/news/articleView.html?idxno=127679)
 ## 2. Result : 완성된 리스트
 
 
- <img src="https://user-images.githubusercontent.com/75352728/108820102-0a02d480-75ff-11eb-9e76-ebfd594a1493.PNG" width="30%" height="30%">
+ <img src="https://user-images.githubusercontent.com/75352728/108820102-0a02d480-75ff-11eb-9e76-ebfd594a1493.PNG" width="70%" height="70%">
  
 <br />
 
