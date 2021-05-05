@@ -84,6 +84,10 @@ URL:[기사](https://www.jejudomin.co.kr/news/articleView.html?idxno=127679)
 
 ## 2. Result : 완성된 리스트
 
+
+![재 사](https://user-images.githubusercontent.com/75352728/108820102-0a02d480-75ff-11eb-9e76-ebfd594a1493.PNG)
+ <img src="https://user-images.githubusercontent.com/75352728/117124436-473fcb80-add3-11eb-97da-7227ec31367d.png" width="30%" height="30%">
+ 
 <br />
 
 ****
@@ -197,7 +201,7 @@ raw_data_6.tail(2)
 df_6 = raw_data_6.copy()
 msno.matrix(df_6)
 ```
-![image](https://user-images.githubusercontent.com/75352728/108266471-79b33280-71ad-11eb-916c-1910877b178b.png)
+ <img src="https://user-images.githubusercontent.com/75352728/108266471-79b33280-71ad-11eb-916c-1910877b178b.png" width="70%" height="70%">
 
 
 ##### 결측치가 없는 완벽한 데이터!!
@@ -236,8 +240,8 @@ def time_zone(time):
 df_5['time_zone'] = df_5['Time'].transform(time_zone)
 df_5['time_zone'] = df_5['Time'].str.replace('x','무승인거래')
 ```
-![캡처](https://user-images.githubusercontent.com/75352728/108269537-7ae65e80-71b1-11eb-8287-bb9d6951e81a.PNG)
 
+ <img src="https://user-images.githubusercontent.com/75352728/108269537-7ae65e80-71b1-11eb-8287-bb9d6951e81a.PNG" width="70%" height="70%">
 
 <br />
 
@@ -273,8 +277,9 @@ df_5_1.replace(dict.fromkeys({'일반한식', '서양음식', '일식회집', '�
 <br />
 
 
-![캡처](https://user-images.githubusercontent.com/75352728/108270244-8b4b0900-71b2-11eb-8bdf-b338f21d87e7.PNG)
 
+ <img src="https://user-images.githubusercontent.com/75352728/108270244-8b4b0900-71b2-11eb-8bdf-b338f21d87e7.PNG" width="70%" height="70%">
+ 
 <br />
 
 ##### 새로운 데이터 프레임 셍성!
@@ -328,7 +333,7 @@ sigu_5 = df_5.groupby('SIGUNGU').sum()
 ```
 <br />
 
-![5](https://user-images.githubusercontent.com/75352728/108288368-d32c5900-71cf-11eb-9596-666790f7c55b.PNG)
+ <img src="https://user-images.githubusercontent.com/75352728/108288368-d32c5900-71cf-11eb-9596-666790f7c55b.PNG" width="70%" height="70%">
 
 <br />
 
@@ -347,7 +352,7 @@ labels = ['TotalSpent','DisSpent']
 ```
 <br />
 
-![5 8월 재난지원금 비율](https://user-images.githubusercontent.com/75352728/108288246-9d877000-71cf-11eb-8bec-7cfc33bcf793.PNG)
+ <img src="https://user-images.githubusercontent.com/75352728/108288246-9d877000-71cf-11eb-8bec-7cfc33bcf793.PNG" width="70%" height="70%">
 
 <br />
 
@@ -378,7 +383,7 @@ labels = ['TotalSpent','DisSpent']
 
 <br />
 
-![월별 시군별 총 사용금액](https://user-images.githubusercontent.com/75352728/108288419-e5a69280-71cf-11eb-91bb-111edb6c8c93.PNG)
+ <img src="https://user-images.githubusercontent.com/75352728/108288419-e5a69280-71cf-11eb-91bb-111edb6c8c93.PNG" width="70%" height="70%">
 
 <br />
 
@@ -394,7 +399,7 @@ labels = ['TotalSpent','DisSpent']
 
 <br />
 
-![월별 시군별 재난지원금 사용금액](https://user-images.githubusercontent.com/75352728/108288422-e63f2900-71cf-11eb-9fde-2d4bbb9a2941.PNG)
+ <img src="https://user-images.githubusercontent.com/75352728/108288422-e63f2900-71cf-11eb-9fde-2d4bbb9a2941.PNG" width="70%" height="70%">
 
 <br />
 
@@ -429,8 +434,8 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 
 <br />
 
-![월별 상위 5개 업종별 총 이용 건수](https://user-images.githubusercontent.com/75352728/108289441-bf81f200-71d1-11eb-8983-4c4a43a6bbb1.PNG)
-
+ <img src="https://user-images.githubusercontent.com/75352728/108289441-bf81f200-71d1-11eb-8983-4c4a43a6bbb1.PNG" width="70%" height="70%">
+ 
 <br />
 
 ##### * 총 이용 건수에는 공통적으로 농업, 식료품, 의료, 교통/자동차, 쇼핑 등에 사용함.
@@ -445,8 +450,8 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 
 
 
-![월별 상위 5개 업종별 재난지원금 이용 건수](https://user-images.githubusercontent.com/75352728/108289447-c446a600-71d1-11eb-8f12-c531e0c62b0a.PNG)
-
+ <img src="https://user-images.githubusercontent.com/75352728/108289447-c446a600-71d1-11eb-8f12-c531e0c62b0a.PNG" width="70%" height="70%">
+ 
 <br />
 
 ##### * 재난지원금 이용 건수에는 공통적으로 농업, 의료, 식료품, 기타농업관련, 교통/자동차 등에 사용함.
@@ -470,7 +475,7 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 
 <br />
 
-![월별 소상공인 총 사용 금액](https://user-images.githubusercontent.com/75352728/108290525-f0fbbd00-71d3-11eb-8146-648551cc777b.PNG)
+ <img src="https://user-images.githubusercontent.com/75352728/108290525-f0fbbd00-71d3-11eb-8146-648551cc777b.PNG" width="70%" height="70%">
 
  <br />
  
@@ -481,8 +486,8 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 
 <br />
 
-![월별 소상공인 재난지원금 금액](https://user-images.githubusercontent.com/75352728/108290528-f1945380-71d3-11eb-834e-e4082b960a65.PNG)
-
+ <img src="https://user-images.githubusercontent.com/75352728/108290528-f1945380-71d3-11eb-834e-e4082b960a65.PNG" width="70%" height="70%">
+ 
 <br />
 
 ##### * 5,6 7,8 월 : 일반 > 영세 > 중소1 > 중소 , 중소2  순으로 볼 수 있다.
@@ -495,8 +500,8 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 
 <br />
 
-![5 6월 소상공인별 재닌지원금 사용 비율 비교](https://user-images.githubusercontent.com/75352728/108288424-e7705600-71cf-11eb-8879-fc3579a4bd4a.PNG)
-
+ <img src="https://user-images.githubusercontent.com/75352728/108288424-e7705600-71cf-11eb-8879-fc3579a4bd4a.PNG" width="70%" height="70%">
+ 
 <br />
 
 ##### 비율을 표로 보았을 때 각 소상공인의 사용 금액은 별다른 차이가 없다.
@@ -509,7 +514,9 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 
 #### 2-4. 월별 시간별 사용 금액 
 
-![시간별 총  재난지원금](https://user-images.githubusercontent.com/75352728/108291500-b7c44c80-71d5-11eb-9a49-21f74c348870.PNG)
+
+ <img src="https://user-images.githubusercontent.com/75352728/108291500-b7c44c80-71d5-11eb-9a49-21f74c348870.PNG" width="70%" height="70%">
+ 
 ##### 왼쪽은 총 사용 금액으로 월별 새로 순으로, 오른쪽은 재난지원금 사용 금액으로 월별 새로 순 으로
 ##### 일반 사람의 생활 패턴과 총 사용 금액과 재난지원금 사용 금액이 비슷하게 나타난다.
 ##### 23시- 5시까지 제일 사용을 적게 한다.
@@ -527,7 +534,7 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 
 <br />
 
-![월별 시간대별 사용금액](https://user-images.githubusercontent.com/75352728/108292145-da0a9a00-71d6-11eb-95d9-03015c2524c2.PNG)
+ <img src="https://user-images.githubusercontent.com/75352728/108292145-da0a9a00-71d6-11eb-95d9-03015c2524c2.PNG" width="70%" height="70%">
 
 <br />
 
@@ -539,8 +546,8 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 
 <br />
 
-![캡처](https://user-images.githubusercontent.com/75352728/108292407-61580d80-71d7-11eb-8c3a-e57877699aa9.PNG)
-
+ <img src="https://user-images.githubusercontent.com/75352728/108292407-61580d80-71d7-11eb-8c3a-e57877699aa9.PNG" width="70%" height="70%">
+ 
 <br />
 
 ##### * 시간대별 비율은 5,6,7,8 월 모두 심야, 새벽이 적은 비율로 나타난다.
@@ -556,7 +563,11 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 <br />
 
 ##### 1. 상위 5개 업종 총 사용 금액
-![상위 5개 업종](https://user-images.githubusercontent.com/75352728/108819425-2fdba980-75fe-11eb-95dc-18f6a66d7a05.PNG)
+
+<br />
+
+
+ <img src="https://user-images.githubusercontent.com/75352728/108819425-2fdba980-75fe-11eb-95dc-18f6a66d7a05.PNG" width="70%" height="70%">
 
 <br />
 
@@ -569,7 +580,8 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 
 <br />
 
-![외식](https://user-images.githubusercontent.com/75352728/108819430-310cd680-75fe-11eb-9bde-29e11c6d2d37.PNG)
+
+ <img src="https://user-images.githubusercontent.com/75352728/108819430-310cd680-75fe-11eb-9bde-29e11c6d2d37.PNG" width="70%" height="70%">
 
 <br />
 
@@ -578,7 +590,8 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 
 <br />
 
-![쇼핑](https://user-images.githubusercontent.com/75352728/108819434-323e0380-75fe-11eb-9a07-b62a8f3b0acd.PNG)
+
+ <img src="https://user-images.githubusercontent.com/75352728/108819434-323e0380-75fe-11eb-9a07-b62a8f3b0acd.PNG" width="70%" height="70%">
 
 <br />
 
@@ -587,15 +600,17 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 
 <br />
 
-![교통자동차](https://user-images.githubusercontent.com/75352728/108819437-32d69a00-75fe-11eb-89e5-b51a5a1c0d88.PNG)
 
+ <img src="https://user-images.githubusercontent.com/75352728/108819437-32d69a00-75fe-11eb-89e5-b51a5a1c0d88.PNG" width="70%" height="70%">
+ 
 <br />
 
 
 ##### 1-4. 월별 의료 총 사용 금액 비교<br />
 
-![의료](https://user-images.githubusercontent.com/75352728/108819441-3407c700-75fe-11eb-899f-7ee00877762b.PNG)
 
+ <img src="https://user-images.githubusercontent.com/75352728/108819441-3407c700-75fe-11eb-899f-7ee00877762b.PNG" width="70%" height="70%">
+ 
 <br />
 
 
@@ -604,8 +619,9 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 <br />
 
 
-![여행숙박](https://user-images.githubusercontent.com/75352728/108819445-3538f400-75fe-11eb-894c-d0475a3e60cd.PNG)
 
+ <img src="https://user-images.githubusercontent.com/75352728/108819445-3538f400-75fe-11eb-894c-d0475a3e60cd.PNG" width="70%" height="70%">
+ 
 <br />
 
 ##### * 여행/숙박을 제외한 5가지 업종이 시간별 비슷한 패턴을 보인다.
@@ -619,8 +635,9 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 
 <br />
 
-![재 사](https://user-images.githubusercontent.com/75352728/108820102-0a02d480-75ff-11eb-9e76-ebfd594a1493.PNG)
 
+ <img src="https://user-images.githubusercontent.com/75352728/108820102-0a02d480-75ff-11eb-9e76-ebfd594a1493.PNG" width="70%" height="70%">
+ 
 <br />
 
 ##### * 월별 상위 5개 업종을 보았을 때 5,6,7,8월 모두 순위는 조금 다르지만 식료품, 외식, 쇼핑, 교통/자동차, 농업이 동일하게 보인다.
@@ -633,8 +650,9 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 
 <br />
 
-![재 식](https://user-images.githubusercontent.com/75352728/108820108-0b340180-75ff-11eb-90b6-2f0fb726151b.PNG)
 
+ <img src="https://user-images.githubusercontent.com/75352728/108820108-0b340180-75ff-11eb-90b6-2f0fb726151b.PNG" width="70%" height="70%">
+ 
 
 <br />
 
@@ -642,8 +660,8 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 
 <br />
 
-![재 외](https://user-images.githubusercontent.com/75352728/108820856-20f5f680-7600-11eb-9f83-de341277cf05.PNG)
 
+ <img src="https://user-images.githubusercontent.com/75352728/108820856-20f5f680-7600-11eb-9f83-de341277cf05.PNG" width="70%" height="70%">
 
 <br />
 
@@ -651,16 +669,17 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 
 <br />
 
-![재 자](https://user-images.githubusercontent.com/75352728/108820122-125b0f80-75ff-11eb-92d4-dc0168770098.PNG)
 
+ <img src="https://user-images.githubusercontent.com/75352728/108820122-125b0f80-75ff-11eb-92d4-dc0168770098.PNG" width="70%" height="70%">
+ 
 <br />
 
 ##### 2-4. 월별 의료 총 사용 금액 비교
 
 <br />
 
-![재 농](https://user-images.githubusercontent.com/75352728/108820127-138c3c80-75ff-11eb-943f-3053c6ceb6bc.PNG)
-
+ <img src="https://user-images.githubusercontent.com/75352728/108820127-138c3c80-75ff-11eb-943f-3053c6ceb6bc.PNG" width="70%" height="70%">
+ 
 <br />
 
 
@@ -669,8 +688,8 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 
 <br />
 
-![재 의](https://user-images.githubusercontent.com/75352728/108820130-1424d300-75ff-11eb-81cc-0820a424cb5d.PNG)
-
+ <img src="https://user-images.githubusercontent.com/75352728/108820130-1424d300-75ff-11eb-81cc-0820a424cb5d.PNG" width="70%" height="70%">
+ 
 <br />
 
 ##### * 총 사용 금액에서 많이 사용 되는 업종이 재난지원금에서 또한 많이 사용되는 것으로 나타난다.
