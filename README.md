@@ -240,7 +240,7 @@ df_5['time_zone'] = df_5['Time'].transform(time_zone)
 df_5['time_zone'] = df_5['Time'].str.replace('x','무승인거래')
 ```
 
- <img src="https://user-images.githubusercontent.com/75352728/108269537-7ae65e80-71b1-11eb-8287-bb9d6951e81a.PNG" width="70%" height="70%">
+ <img src="https://user-images.githubusercontent.com/75352728/108269537-7ae65e80-71b1-11eb-8287-bb9d6951e81a.PNG" width="50%" height="50%">
 
 <br />
 
@@ -277,7 +277,7 @@ df_5_1.replace(dict.fromkeys({'일반한식', '서양음식', '일식회집', '�
 
 
 
- <img src="https://user-images.githubusercontent.com/75352728/108270244-8b4b0900-71b2-11eb-8bdf-b338f21d87e7.PNG" width="70%" height="70%">
+ <img src="https://user-images.githubusercontent.com/75352728/108270244-8b4b0900-71b2-11eb-8bdf-b338f21d87e7.PNG" width="50%" height="50%">
  
 <br />
 
@@ -332,7 +332,7 @@ sigu_5 = df_5.groupby('SIGUNGU').sum()
 ```
 <br />
 
- <img src="https://user-images.githubusercontent.com/75352728/108288368-d32c5900-71cf-11eb-9596-666790f7c55b.PNG" width="70%" height="70%">
+ <img src="https://user-images.githubusercontent.com/75352728/108288368-d32c5900-71cf-11eb-9596-666790f7c55b.PNG" width="50%" height="50%">
 
 <br />
 
