@@ -85,7 +85,7 @@ URL:[기사](https://www.jejudomin.co.kr/news/articleView.html?idxno=127679)
 ## 2. Result : 완성된 리스트
 
 
- <img src="https://user-images.githubusercontent.com/75352728/108820102-0a02d480-75ff-11eb-9e76-ebfd594a1493.PNG" width="70%" height="70%">
+ <img src="https://user-images.githubusercontent.com/75352728/108820102-0a02d480-75ff-11eb-9e76-ebfd594a1493.PNG" width="80%" height="80%">
  
 <br />
 
@@ -200,7 +200,7 @@ raw_data_6.tail(2)
 df_6 = raw_data_6.copy()
 msno.matrix(df_6)
 ```
- <img src="https://user-images.githubusercontent.com/75352728/108266471-79b33280-71ad-11eb-916c-1910877b178b.png" width="70%" height="70%">
+ <img src="https://user-images.githubusercontent.com/75352728/108266471-79b33280-71ad-11eb-916c-1910877b178b.png" width="80%" height="80%">
 
 
 ##### 결측치가 없는 완벽한 데이터!!
@@ -239,7 +239,7 @@ def time_zone(time):
 df_5['time_zone'] = df_5['Time'].transform(time_zone)
 df_5['time_zone'] = df_5['Time'].str.replace('x','무승인거래')
 ```
- <img src="https://user-images.githubusercontent.com/75352728/108269537-7ae65e80-71b1-11eb-8287-bb9d6951e81a.PNG" width="50%" height="50%">
+ <img src="https://user-images.githubusercontent.com/75352728/108269537-7ae65e80-71b1-11eb-8287-bb9d6951e81a.PNG" width="70%" height="70%">
  
 <br />
 
