@@ -198,7 +198,7 @@ msno.matrix(df_6)
 ![image](https://user-images.githubusercontent.com/75352728/108266471-79b33280-71ad-11eb-916c-1910877b178b.png)
 
 
-##### 결측치 없음
+##### 결측치가 없는 완벽한 데이터!!
 
 
 <br />
