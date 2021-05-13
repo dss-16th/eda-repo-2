@@ -31,6 +31,7 @@
     
 <br />
 <br />
+
 ****
 
 #### 1-4. 인원
@@ -45,9 +46,8 @@
 <br />
 <br />
 
-****
 
-#### 1-4. Dataset
+#### 1-5. Dataset
 
 ##### [공간정보 탐색적 데이터 분석 경진대회](https://dacon.io/competitions/official/235682/data/)
 
