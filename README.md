@@ -1,9 +1,10 @@
 # 제주도 재난지원금 데이터를 통한 소비 분석
 
+__EDA PROJECT__
  <img src="https://user-images.githubusercontent.com/75352728/118107276-84cad700-b419-11eb-9ddb-e5b6003c943e.png" width="80%" height="80%">
 
-#### __EDA PROJECT__
 
+****
 
 <br />
 <br />
