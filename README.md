@@ -58,14 +58,6 @@
     * KRI-DAC_Jeju_data8.txt(37.4MB)
 
 
-<br />
-<br />
-
-#### 1-5. Roles
-* 정민주 : 주제설정, PPT 작성, 전처리 및 시각화(7,8월 data)
-* 이주영 : 주재설정, readme 작성, 전처리 및 시각화(5,6월 data), 변수 변환(time_zone, classification)
-
-
 ****
 
 <br />
