@@ -54,7 +54,7 @@
 - 인원 : 2명
 - 정민주 : 주제설정, readme 작성(구조 등), 전처리 및 시각화(7,8월 data), PPT 작성
     - GitHub address : [https://github.com/meiren13](https://github.com/meiren13)
-- 이주영 : 주제설정, readme 작성(코드, 시각화 자료등), 전처리 및 시각화(5,6월 data), 변수 변환(classification), 발표, 코드 
+- 이주영 : 주제설정, readme 작성(코드, 시각화 자료등), 전처리 및 시각화(5,6월 data), 변수 변환(classification), 발표, 코드 작성
     - GitHub address : [https://github.com/leekj3133](https://github.com/leekj3133)
 
 
