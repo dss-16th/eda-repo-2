@@ -684,6 +684,4 @@ sns.barplot(x='classification', y='NumofDisSpent', data=norm_jeju_type_6.nlarges
 URL: [GitHubBlog](https://github.com/Yenabeam/JejuEda_DACON)
 - 진순현 (2020.08.24). 제주관광 ‘붕괴’...‘산업위기대응 특별지역’ 지정 촉구. <제주도민일보>. 
 URL:[기사](https://www.jejudomin.co.kr/news/articleView.html?idxno=127679)
-- 김차경 (2020.12.23). 위기에서 도약으로… 코로나19 극복을 위한 우리의 노력[2020, 위기를 넘어 희망을 쓰다] ④ 코로나19 극복 경제지원. <정책뉴스>. URL:[기사](https://www.korea.kr/news/policyNewsView.do?newsId=148881628)
-
-[출처] 대한민국 정책브리핑(www.korea.kr)
+- 김차경 (2020.12.23). 위기에서 도약으로… 코로나19 극복을 위한 우리의 노력[2020, 위기를 넘어 희망을 쓰다] ④ 코로나19 극복 경제지원. <정책뉴스>. URL:[기사](https://www.korea.kr/news/policyNewsView.do?newsId=148881628) 대한민국 정책브리핑(www.korea.kr)
