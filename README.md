@@ -133,19 +133,23 @@
 ```
 %config InlineBackend.figure_format = 'retina'
 %matplotlib inline
+
 # 전처리  
 import numpy as np
 import pandas  as pd
+
 # 위도 경도 바꿔줌 
 from pyproj import CRS
 from pyproj import Proj
 from pyproj import Transformer
 import geopandas
+
 # 시각화
 import missingno as msno
 import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
+
 # url 불러옴 
 import requests; from urllib.parse import urlparse
 import json
